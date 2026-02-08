@@ -31,6 +31,9 @@ export const HabitManager = () => {
 
   const handleAddHabit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submitted');
+    console.log('Habit name:', newHabitName);
+    console.log('Habit name trim:', newHabitName.trim());
     if (newHabitName.trim()) {
       console.log('Adding habit with specificDates:', newHabitSpecificDates);
       console.log('Adding habit with daysOfWeek:', newHabitDays);
@@ -41,6 +44,8 @@ export const HabitManager = () => {
       setNewHabitIsOneTime(false);
       setNewHabitSpecificDates([]);
       setNewDateInput('');
+    } else {
+      console.log('Habit name is empty!');
     }
   };
 
@@ -261,7 +266,12 @@ export const HabitManager = () => {
           
           <button
             type="submit"
-            className="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl hover:shadow-lg hover:scale-[1.02] transition-all duration-200 font-medium"
+            disabled={!newHabitName.trim()}
+            className={`w-full px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
+              newHabitName.trim()
+                ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-lg hover:scale-[1.02] cursor-pointer'
+                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+            }`}
           >
             Add Habit
           </button>
