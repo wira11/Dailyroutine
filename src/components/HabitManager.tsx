@@ -31,12 +31,7 @@ export const HabitManager = () => {
 
   const handleAddHabit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted');
-    console.log('Habit name:', newHabitName);
-    console.log('Habit name trim:', newHabitName.trim());
     if (newHabitName.trim()) {
-      console.log('Adding habit with specificDates:', newHabitSpecificDates);
-      console.log('Adding habit with daysOfWeek:', newHabitDays);
       addHabit(newHabitName, newHabitTime || undefined, newHabitDays, newHabitIsOneTime, newHabitSpecificDates);
       setNewHabitName('');
       setNewHabitTime('');
@@ -44,8 +39,6 @@ export const HabitManager = () => {
       setNewHabitIsOneTime(false);
       setNewHabitSpecificDates([]);
       setNewDateInput('');
-    } else {
-      console.log('Habit name is empty!');
     }
   };
 
