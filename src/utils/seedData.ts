@@ -14,35 +14,37 @@
  * 4. Refresh the page
  */
 
+import { generateUUID } from './dateUtils';
+
 export const seedSampleData = () => {
   // Sample habits
   const habits = [
     {
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       name: "Morning Exercise",
       active: true,
       createdAt: new Date("2026-01-01").toISOString(),
     },
     {
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       name: "Read for 30 minutes",
       active: true,
       createdAt: new Date("2026-01-01").toISOString(),
     },
     {
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       name: "Drink 8 glasses of water",
       active: true,
       createdAt: new Date("2026-01-05").toISOString(),
     },
     {
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       name: "Meditate",
       active: true,
       createdAt: new Date("2026-01-10").toISOString(),
     },
     {
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       name: "Journal",
       active: true,
       createdAt: new Date("2026-01-15").toISOString(),

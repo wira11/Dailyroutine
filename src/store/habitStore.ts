@@ -18,7 +18,7 @@ import { create } from 'zustand';
 import { Habit, CompletionRecord } from '@/types';
 import { storageService } from '@/services/storageService';
 import { dailyResetService } from '@/services/dailyResetService';
-import { getTodayString } from '@/utils/dateUtils';
+import { getTodayString, generateUUID } from '@/utils/dateUtils';
 
 interface HabitStore {
   // State
@@ -75,7 +75,7 @@ export const useHabitStore = create<HabitStore>((set, get) => ({
     const maxOrder = habits.reduce((max, h) => Math.max(max, h.order || 0), 0);
     
     const newHabit: Habit = {
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       name: name.trim(),
       active: true,
       createdAt: new Date().toISOString(),
