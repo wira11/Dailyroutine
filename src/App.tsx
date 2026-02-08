@@ -65,7 +65,7 @@ function App() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white">Daily Routine</h1>
+                <h1 className="text-2xl font-bold text-white">Wira Daily Routine</h1>
                 <p className="text-sm text-white/80">Track your habits, transform your life</p>
               </div>
             </div>
