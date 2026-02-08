@@ -50,7 +50,7 @@ export const seedSampleData = () => {
   ];
 
   // Generate completion records for the past 30 days
-  const completions = [];
+  const completions: Array<{ habitId: string; date: string; completed: boolean }> = [];
   const today = new Date();
   
   for (let daysAgo = 30; daysAgo >= 0; daysAgo--) {
